@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="row">
+      <div class="col-4">
+            {% if object %}
+                <h5>Atualiza Cadastro</h5>
+            {% else %}
+                <h5>Cria Cadastro</h5>
+            {% endif %}
+      </div>
+      <div class="col-4">
+        <a href="{% url 'home' %}" class="btn bn-sm btn-outline-primary">
+           <i class="fas fa-arrow-alt-circle-left"></i> Voltar</a>
+      </div>
+   </div>
+
+    <div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+
+        <div class="form-group">
+        {% if object %}
+            <input type="submit" class="btn btn-outline-primary" value="Atualizar">
+        {% else %}
+            <input type="submit"  class="btn btn-outline-primary" value="Gravar">
+        {% endif %}
+        </div>
+
+    </form>
+    </div>
+
+
+{% endblock %}

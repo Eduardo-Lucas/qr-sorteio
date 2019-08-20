@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="bg-dark text-info text-center">
+        <h1>Parabéns {{object.nome_completo}}!</h1>
+        <p class="text-warning">Seu código: <strong>{{object.codigo}}</strong></p>
+        <p>Agora é só aguardar o dia do sorteio</p>
+        <a href="{% url 'home' %}">Voltar</a>
+    </div>
+{% endblock %}
