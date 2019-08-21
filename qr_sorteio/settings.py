@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'bootstrapform',
+    'import_export',
+    
     'apps.cadastros',
     'apps.entrada',
 ]

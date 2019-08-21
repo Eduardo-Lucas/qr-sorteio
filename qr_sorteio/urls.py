@@ -13,14 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+
 from django.contrib import admin
 from django.template.context_processors import static
+from django.urls import path, include
 
 from qr_sorteio import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^cadastros/', include('apps.cadastros.urls')),
-    url(r'^', include('apps.entrada.urls')),
+    path('admin/', admin.site.urls),
+    path('cadastros/', include('apps.cadastros.urls')),
+    path('', include('apps.entrada.urls')),
 ]
